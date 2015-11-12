@@ -28,7 +28,7 @@ function StartAMT() {
 function setPageFormat(){
 		
 		// Put image and choice side-by-side
-		$('#anno_region').append("<div id = 'loading'> Loading video ... </div>" + 
+		$('#anno_region').append("<div id = 'loading'> Loading video, please wait...    </div>" + 
 										 "<div id = 'video'>  </div>" +
 										 "<div id = 'choice'> </div>" +
 										 "<br style='clear: left;' />" +
@@ -38,6 +38,7 @@ function setPageFormat(){
 		$('#anno_region').width('100%');
 		$('#loading').css({'float':'left'});
 		$('#video').css({'float':'left'});
+		document.getElementById('video').style.display = 'none';
 		$('#choice').css({'float':'left'});
 
 };
@@ -79,10 +80,10 @@ function loadVideo(){
 		setSubmitButtonVisibility();
 		$("#mt_submit").text('Submit HIT');
 	}	
-
-	document.getElementById('loading').style.visibility = 'hidden';
-	document.getElementById('loading').style.display = 'none';
-   document.getElementById('main_media').style.visibility = 'visible';
+	v.oncanplay = function(e) {
+		document.getElementById('loading').style.display = 'none';
+		document.getElementById('video').style.display = 'block';
+	}
 
 }
 
