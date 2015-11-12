@@ -76,6 +76,7 @@ function loadVideo(){
 	var v = document.getElementsByTagName('video')[0];
 	v.onended = function(e) {
 		video_finished = true;
+		setSubmitButtonVisibility();
 		$("#mt_submit").text('Submit HIT');
 	}	
 
@@ -102,17 +103,17 @@ function renderButtons(){
 
 	var intro_str = '<table>'
 			+ '<tr><td>'
-			+ '<font size="4"><b> On a scale of 0-5, how relevant is this video to </font> <font size = 6> <u>dog</u></font>? </b></font>'         
+			+ '<font size="4"><b> On a scale of 0-5, how relevant is this video to </font> <font size = 6> <u>"dog"</u></font>? </b></font>'         
 		   + '</tr></td>' 
 			+ '</table>';
 	$('#choice').append(intro_str);
 	var select_html_str = '<form>' +
-								' <input type="radio" name="score" value="0" onchange="onChange()"> 0 <br>' +
+								' <input type="radio" name="score" value="0" onchange="onChange()"> 0 - not relevant<br>' +
 								' <input type="radio" name="score" value="1" onchange="onChange()"> 1 <br>' +
 								' <input type="radio" name="score" value="2" onchange="onChange()"> 2 <br>' +
 								' <input type="radio" name="score" value="3" onchange="onChange()"> 3 <br>' +
 								' <input type="radio" name="score" value="4" onchange="onChange()"> 4 <br>' +
-								' <input type="radio" name="score" value="5" onchange="onChange()"> 5 <br>' +
+								' <input type="radio" name="score" value="5" onchange="onChange()"> 5 - very relevant<br>' +
 								' </form>';
 	$('#choice').append(select_html_str);
 
@@ -152,10 +153,12 @@ function onSubmit(event){
 
 
 function setSubmitButtonVisibility(){
+	console.log(selected_value);
+	console.log(video_finished);
+	
 	if (selected_value > -1 && video_finished) {
 			document.getElementById("mt_submit").disabled = false;
 	}else{
-			console.log(video_finished);
 			if (video_finished == false) {
 				$("#mt_submit").text('Submit HIT (Please finish watching the video)');
 			}
