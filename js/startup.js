@@ -28,7 +28,7 @@ function StartAMT() {
 function setPageFormat(){
 		
 		// Put image and choice side-by-side
-		$('#anno_region').append("<div id = 'loading'> Loading videos, please wait...    </div>" +
+		$('#anno_region').append("<div id = 'loading'> Loading videos, please wait. (It takes 5 - 10 secs)    </div>" +
 										 "<div id = 'video_container'> </div>" +
 										 "<div id = 'choice'> </div>" +
 	   								 "<div id = 'submit_region'> </div>" + 
@@ -135,7 +135,7 @@ function renderButtons(){
 
 	var intro_str = '<br><table>'
 			+ '<tr><td>'
-			+ '<font size="4"><b> Which video is more relevant to the word: </font> <font size = 6> <u>"dog"</u></font> ? </b></font>'         
+			+ '<font size="4"><b> When searching videos using keyword: </font> <font size = 7> <u>"dog"</u></font> <font size = "4">, which video is preferred? </b></font>'         
 		   + '</tr></td>' 
 			+ '</table>';
 	$('#choice').append(intro_str);
