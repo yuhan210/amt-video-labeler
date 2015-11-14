@@ -135,7 +135,7 @@ function renderButtons(){
 
 	var intro_str = '<br><table>'
 			+ '<tr><td>'
-			+ '<font size="4"><b> When searching videos using keyword: </font> <font size = 7> <u>"dog"</u></font> <font size = "4">, which video is preferred? </b></font>'         
+			+ '<font size="4"><b> When searching videos using keyword: </font> <font size = 7> <u>"dog"</u></font> <font size = "4">, which video is more relevant? </b></font>'         
 		   + '</tr></td>' 
 			+ '</table>';
 	$('#choice').append(intro_str);

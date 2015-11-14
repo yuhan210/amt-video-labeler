@@ -5,7 +5,8 @@ function page(){
 	this.assignmentId = null;	
 	this.hitId = null;
 	this.workerId = null;
-	this.video_name = null;
+	this.video_name_a = null;
+	this.video_name_b = null;
 	this.turkSubmitTo = null;
 
 	this.ParseURL = function () {
@@ -36,8 +37,11 @@ function page(){
 					this.workerId = par_value;	
 				}
 			
-				if (par_field == 'video_name') {
-					this.video_name = par_value;
+				if (par_field == 'video_name_a') {
+					this.video_name_a = par_value;
+				}
+				if (par_field == 'video_name_b') {
+					this.video_name_b = par_value;
 				}
 			
 				if (par_field == 'turkSubmitTo') {	
@@ -67,7 +71,8 @@ function page(){
 		}else{ // URL contains no parameters
 
 			// Use a default example
-			this.video_name =  "18_sled_dogs_over_20_mph_chN7WdlZ3JY_450_599.mp4";
+			this.video_name_a = "blind_kellar_plays_fetch_Ha92yzmVv2s_3000_3149.mp4";
+			this.video_name_b = "adorable_baby_lambs_5EbATpgZEMw_1650_1799.mp4";
 		}
 		return true;
 	};
